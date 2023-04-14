@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "839634167824",
+    "project_id": "wosool-22c13",
+    "storage_bucket": "wosool-22c13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839634167824:android:9e8265e6940368919f8295",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839634167824-hur89ie9b7caosemjjqin3k5776k9mor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQjMxrBsVXBaCGV7N-ljcE_lcAT36RB1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839634167824-hur89ie9b7caosemjjqin3k5776k9mor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
