@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
 
     <application
         android:allowBackup="true"
@@ -93,9 +95,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
 
-
-
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCUjgEot4fYuOT5ietOLGWRp1vBfDl9Qa4" />
@@ -105,6 +104,11 @@
             android:label="SearchPlaces"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
+        <activity android:name="sign_language.MainActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
