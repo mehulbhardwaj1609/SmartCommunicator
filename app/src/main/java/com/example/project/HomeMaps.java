@@ -700,7 +700,7 @@ return hashMaps;
     // to fetch audio file for the Arabic text to speech purpose
     private void fetchJsonResponse(final String speech) {
         AudioManager audioManager = (AudioManager) HomeMaps.this.getApplication().getSystemService(Context.AUDIO_SERVICE);
-        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=ar&client=tw-ob";
+        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=en&client=tw-ob";
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {

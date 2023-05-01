@@ -5,6 +5,6 @@
 5    android:versionName="3.4.3" >
 6
 7    <uses-sdk android:minSdkVersion="16" />
-7-->/Users/ayush.s/Documents/work/Sign2/opencv343/java/AndroidManifest.xml
+7-->D:\MajorProject\SmartCommunicator\opencv343\java\AndroidManifest.xml
 8
 9</manifest>
