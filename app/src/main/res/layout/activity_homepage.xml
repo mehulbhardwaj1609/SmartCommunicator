@@ -96,8 +96,9 @@
                 android:background="@color/quantum_pink"
                 android:drawableRight="@drawable/sign"
                 android:onClick="signlang"
-                android:text=" Sign Language Assistant"
+                android:text="  Sign Language Assistant"
                 android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
@@ -143,12 +144,6 @@
                 android:onClick="feedbackForm"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/sign" />
 
 
         </LinearLayout>
