@@ -139,6 +139,7 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void calendar(View view) {
+        
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
