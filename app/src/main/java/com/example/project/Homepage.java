@@ -119,6 +119,10 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void signlang(View view) {
+        Intent intent = new Intent(this, Conversation.class);
+        startActivity(intent);
+    }
     public void assistanceVideoCall(View view) {
         getlocation();
         if(isDuoInstalled()){

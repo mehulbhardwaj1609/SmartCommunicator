@@ -89,6 +89,19 @@
                 android:textSize="20dp" />
 
             <Button
+                android:id="@+id/b7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginVertical="1dp"
+                android:background="@color/quantum_pink"
+                android:drawableLeft="@drawable/sign"
+                android:onClick="signlang"
+                android:text=" Sign Language Assistant"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <Button
                 android:id="@+id/b4"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
