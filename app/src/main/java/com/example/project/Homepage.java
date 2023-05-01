@@ -36,6 +36,8 @@ import com.google.firebase.firestore.SetOptions;
 import java.util.HashMap;
 import java.util.Map;
 
+import sign_language.MainActivity;
+
 public class Homepage extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -120,7 +122,7 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void signlang(View view) {
-        Intent intent = new Intent(this, Conversation.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
     public void assistanceVideoCall(View view) {
@@ -139,6 +141,7 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void calendar(View view) {
+        
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
