@@ -80,14 +80,14 @@
             />
 
         <Button
-            android:id="@+id/mosqueBtn"
+            android:id="@+id/templeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="#1284b8"
-            android:onClick="nearbyMosquesButton"
+            android:onClick="nearbyTemplesButton"
             android:textAllCaps="false"
-            android:text="Mosques"
+            android:text="Temples"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="12sp"

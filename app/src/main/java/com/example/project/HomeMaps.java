@@ -110,7 +110,7 @@ public class HomeMaps extends AppCompatActivity {
             TextView HospitalBtn = findViewById(R.id.HospitalBtn);
             TextView parkingBtn = findViewById(R.id.parkingBtn);
             TextView CollegesBtn = findViewById(R.id.CollegesBtn);
-            TextView mosqueBtn = findViewById(R.id.mosqueBtn);
+            TextView templeBtn = findViewById(R.id.templeBtn);
             TextView cafeBtn = findViewById(R.id.cafeBtn);
             TextView atmBtn = findViewById(R.id.atmBtn);
             TextView LibraryBtn = findViewById(R.id.LibraryBtn);
@@ -123,7 +123,7 @@ public class HomeMaps extends AppCompatActivity {
             HospitalBtn.setText("المستشفيات");
             parkingBtn.setText("المواقف");
             CollegesBtn.setText("الكليات");
-            mosqueBtn.setText("المساجد");
+            templeBtn.setText("المساجد");
             cafeBtn.setText("المقاهي");
             atmBtn.setText("الصرافات الآلية");
             LibraryBtn.setText("المكتبات");
@@ -416,8 +416,8 @@ public class HomeMaps extends AppCompatActivity {
 
     }
 
-    // when nearby mosques button is clicked
-    public void nearbyMosquesButton(View view) {
+    // when nearby temples button is clicked
+    public void nearbyTemplesButton(View view) {
         if (mTTS != null) {
             mTTS.stop();
         }
@@ -428,7 +428,7 @@ public class HomeMaps extends AppCompatActivity {
 
         isExplorerEnabled = false;
 
-        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + mLastKnownLocation.getLatitude() + "," + mLastKnownLocation.getLongitude() + "&rankby=distance" + "&type=" + "mosque" + "&sensor=true" + "&key=" + getResources().getString(R.string.google_maps_api);
+        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + mLastKnownLocation.getLatitude() + "," + mLastKnownLocation.getLongitude() + "&rankby=distance" + "&type=" + "hindu_temple" + "&sensor=true" + "&key=" + getResources().getString(R.string.google_maps_api);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             new placeTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
@@ -675,7 +675,7 @@ public class HomeMaps extends AppCompatActivity {
     // to fetch audio file for the Arabic text to speech purpose
     private void fetchJsonResponse(final String speech) {
         AudioManager audioManager = (AudioManager) HomeMaps.this.getApplication().getSystemService(Context.AUDIO_SERVICE);
-        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=ar&client=tw-ob";
+        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=en&client=tw-ob";
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {
@@ -826,7 +826,7 @@ public class HomeMaps extends AppCompatActivity {
                 typeActionBar = 2;
             else if (typeOfPlace.equals("University"))
                 typeActionBar = 3;
-            else if (typeOfPlace.equals("Mosque"))
+            else if (typeOfPlace.equals("Temple"))
                 typeActionBar = 4;
             else if (typeOfPlace.equals("Cafe"))
                 typeActionBar = 5;
@@ -867,7 +867,7 @@ public class HomeMaps extends AppCompatActivity {
                     typeOfPlace = "موقف" ;
                 else if (typeOfPlace.equals("University"))
                     typeOfPlace = "جامعة" ;
-                else if (typeOfPlace.equals("Mosque"))
+                else if (typeOfPlace.equals("Temples"))
                     typeOfPlace = "مسجد" ;
                 else if (typeOfPlace.equals("Cafe"))
                     typeOfPlace = "مقهى" ;

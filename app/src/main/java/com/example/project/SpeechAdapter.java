@@ -131,7 +131,7 @@ public class SpeechAdapter extends RecyclerView.Adapter<SpeechAdapter.MyViewHold
 
     private void fetchJsonResponse(final String speech, final MyViewHolder holder) {
         AudioManager audioManager = (AudioManager) activity.getApplication().getSystemService(Context.AUDIO_SERVICE);
-        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=ar&client=tw-ob";
+        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=en&client=tw-ob";
         MediaPlayer mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {

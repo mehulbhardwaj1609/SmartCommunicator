@@ -85,7 +85,7 @@ public class PlacesList extends AppCompatActivity {
             else if (typeActionBar == 3)
                 getSupportActionBar().setTitle("Nearby colleges");
             else if (typeActionBar == 4)
-                getSupportActionBar().setTitle("Nearby mosques");
+                getSupportActionBar().setTitle("Nearby temples");
             else if (typeActionBar == 5)
                 getSupportActionBar().setTitle("Nearby cafes");
             else if (typeActionBar == 6)
@@ -172,7 +172,7 @@ public class PlacesList extends AppCompatActivity {
                         typeActivity = "موقف" ;
                     else if (typeActivity.equals("University"))
                         typeActivity = "جامعة" ;
-                    else if (typeActivity.equals("Mosque"))
+                    else if (typeActivity.equals("Temple"))
                         typeActivity = "مسجد" ;
                     else if (typeActivity.equals("Cafe"))
                         typeActivity = "مقهى" ;
@@ -220,7 +220,7 @@ public class PlacesList extends AppCompatActivity {
     }
     public String loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        String currentLanguage = sharedPreferences.getString(LANGUAGE, "Ar");
+        String currentLanguage = sharedPreferences.getString(LANGUAGE, "En");
         return currentLanguage;
     }
 

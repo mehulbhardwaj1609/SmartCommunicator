@@ -337,7 +337,7 @@ public class SearchPlaces extends AppCompatActivity implements OnMapReadyCallbac
                             typeOfPlace = "موقف" ;
                         else if (typeOfPlace.equals("University"))
                             typeOfPlace = "جامعة" ;
-                        else if (typeOfPlace.equals("Mosque"))
+                        else if (typeOfPlace.equals("Temple"))
                             typeOfPlace = "مسجد" ;
                         else if (typeOfPlace.equals("Cafe"))
                             typeOfPlace = "مقهى" ;

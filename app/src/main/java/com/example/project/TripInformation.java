@@ -271,7 +271,7 @@ public class TripInformation extends AppCompatActivity {
         if (mTTS != null)
             mTTS.stop();
         if(handler!=null)
-        handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
+            handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
 
     }
 
