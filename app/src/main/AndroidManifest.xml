@@ -84,7 +84,8 @@
 
         <activity
             android:name=".PlacesList"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
 
         <activity android:name=".TripInformation" android:screenOrientation="portrait" />
 

@@ -434,8 +434,6 @@ public class HomeMaps extends AppCompatActivity {
             new placeTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
         else
             new placeTask().execute(url);
-
-
     }
 
     // when nearby cafes button is clicked
@@ -446,8 +444,6 @@ public class HomeMaps extends AppCompatActivity {
         if( mediaPlayer!= null){
             mediaPlayer.stop();
         }
-
-
         isExplorerEnabled = false;
         String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + mLastKnownLocation.getLatitude() + "," + mLastKnownLocation.getLongitude() + "&rankby=distance" + "&type=" + "cafe" + "&sensor=true" + "&key=" + getResources().getString(R.string.google_maps_api);
 
@@ -473,7 +469,6 @@ public class HomeMaps extends AppCompatActivity {
             new placeTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
         else
             new placeTask().execute(url);
-
     }
 
     // when nearby libraries button is clicked
@@ -514,10 +509,7 @@ public class HomeMaps extends AppCompatActivity {
                 new ParserTaskNearbyList().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, s);
             else
                 new ParserTaskNearbyList().execute(s);
-
-
         }
-
     }
 
     private class placeTaskExplorer extends AsyncTask<String, Integer, String>{
@@ -539,10 +531,7 @@ public class HomeMaps extends AppCompatActivity {
                 new ParserTaskExplorer().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, s);
             else
                 new ParserTaskExplorer().execute(s);
-
-
         }
-
     }
 
     private String downloadUrl(String string) throws IOException{
@@ -577,14 +566,12 @@ public class HomeMaps extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-return hashMaps;
+            return hashMaps;
         }
 
         @Override
         protected void onPostExecute(List<HashMap<String, String>> hashMaps) {
             fetchNearbyPlacesCategory(hashMaps);
-
         }
     }
 
@@ -601,21 +588,10 @@ return hashMaps;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
-
-                fetchNearbyPlacesExplorer(hashMaps);
-
-
-
+            fetchNearbyPlacesExplorer(hashMaps);
             return hashMaps;
         }
-
-
     }
-
-
-
 
     @Override
     protected void onDestroy() {
@@ -626,7 +602,6 @@ return hashMaps;
         if( mediaPlayer!= null){
             mediaPlayer.stop();
         }
-
         super.onDestroy();
     }
 

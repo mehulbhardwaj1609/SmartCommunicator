@@ -108,7 +108,7 @@ public class EventEdit extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Name is empty", Toast.LENGTH_SHORT).show();
             }
             else
-                Toast.makeText(getApplicationContext(),"الإسم فارغ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Name is empty",Toast.LENGTH_LONG).show();
             return;
         }
         event.setName(nameTextView.getText().toString());
@@ -123,7 +123,7 @@ public class EventEdit extends AppCompatActivity {
             Toast.makeText(EventEdit.this,"Reminder updated", Toast.LENGTH_SHORT).show();
         }
         else
-            Toast.makeText(EventEdit.this,"تم تعديل التذكير بنجاح", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EventEdit.this,"Reminder updated", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(EventEdit.this, Calendar.class);
         startActivity(intent);
         finish();
@@ -152,12 +152,12 @@ public class EventEdit extends AppCompatActivity {
             Toast.makeText(this,"Reminder has been removed", Toast.LENGTH_SHORT).show();
         }
         else
-            Toast.makeText(EventEdit.this,"تم إزالة التذكير بنجاح", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EventEdit.this,"Reminder has been removed", Toast.LENGTH_SHORT).show();
         onBackPressed();
     }
     public String loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        String currentLanguage = sharedPreferences.getString(LANGUAGE, "Ar");
+        String currentLanguage = sharedPreferences.getString(LANGUAGE, "En");
         return currentLanguage;
     }
     public void onBackPressed() {

@@ -51,7 +51,7 @@ public class EventAdapter extends FirestoreRecyclerAdapter<Event,EventAdapter.Ev
                     holder.daysLeft.setText("Less then a hour");
                 }
                 else
-                    holder.daysLeft.setText("أقل من ساعة");
+                    holder.daysLeft.setText("Less then a hour");
             }
             else if(remainingTime<=86400000){
                 if(loadData().equals("En")){

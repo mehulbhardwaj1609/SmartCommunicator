@@ -418,7 +418,7 @@ public class SearchPlaces extends AppCompatActivity implements OnMapReadyCallbac
             layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
             layoutParams.setMargins(0,0,30,270);
             if(loadData().equals("Ar"))
-            locationButton.setContentDescription("مكاني");
+                locationButton.setContentDescription("مكاني");
 
         }
 

@@ -28,6 +28,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -47,6 +48,8 @@ import java.util.Locale;
 public class TripInformation extends AppCompatActivity {
 
 // primary attributes
+    long delay=2500;
+    private boolean isTitleSpeaking=false;
     private  String name;
     private  String type;
     private  int distance = -1;
@@ -61,7 +64,7 @@ public class TripInformation extends AppCompatActivity {
     public boolean trigger;
     Handler handler = new Handler();
     Runnable runnable;
-    int delayAfterName;
+    int delayAfterName=0;
     TextView distanceText;
     public static final String SHARED_PREFS = "sharedPrefs";
     String sp;
@@ -278,8 +281,7 @@ public class TripInformation extends AppCompatActivity {
         if (mTTS != null)
             mTTS.stop();
         if(handler!=null)
-        handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
-
+            handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
         if(mediaPlayer!=null){
             mediaPlayer.stop();
         }
@@ -350,20 +352,30 @@ public class TripInformation extends AppCompatActivity {
             }
             // combine arabic and english language to avoid problems related to have a place name in english and arabic language
             if(trigger== true){
-
-
                 try {
-                    Thread.sleep(delayAfterName);
+                    if(delayAfterName>0) {
+                        Thread.sleep(delayAfterName);
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                mTTS.speak(" "  + distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
+//                if(mTTS!=null) {
+//                    mTTS.stop();
+//                }
+                if(isTitleSpeaking==true){
+                    delay=0;
+                }
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Do something after 100ms
+                        mTTS.speak(" "  + distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
+                    }
+                }, delay);
+                isTitleSpeaking=true;
+                //mTTS.speak(" "  + distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
             }
-
-
-
-
             return null;
         }
 
@@ -376,7 +388,7 @@ public class TripInformation extends AppCompatActivity {
     // grab audio file for arabic text to speech
     private void fetchJsonResponse(final String speech) {
         AudioManager audioManager = (AudioManager) TripInformation.this.getApplication().getSystemService(Context.AUDIO_SERVICE);
-        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=ar&client=tw-ob";
+        url = "https://translate.google.com.vn/translate_tts?ie=UTF-8&q=" + speech + "&tl=en&client=tw-ob";
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {
@@ -456,8 +468,20 @@ public class TripInformation extends AppCompatActivity {
                                         }
 
                                         else if (Case == 1) {
-                                            distanceText.setText(distance + " meters to the " + direction);
-                                            mTTS.speak(distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
+
+                                            if(isTitleSpeaking==true){
+                                                delay=0;
+                                            }
+                                            handler.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    //Do something after 100ms
+                                                    distanceText.setText(distance + " meters to the " + direction);
+                                                    mTTS.speak(" "  + distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
+                                                }
+                                            }, delay);
+                                            isTitleSpeaking=true;
+                                            //mTTS.speak(distance + " meters to the " + direction, TextToSpeech.QUEUE_FLUSH, null); //english
                                         }
                                     }
     }

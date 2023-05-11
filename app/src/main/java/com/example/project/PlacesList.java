@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -68,12 +72,7 @@ public class PlacesList extends AppCompatActivity {
             distances = getIntent().getIntegerArrayListExtra("distances");
             directions = getIntent().getExtras().getStringArrayList("directions");
             typeActionBar = getIntent().getIntExtra("typeActionBar", -3);
-
-
-
             }
-
-
 
         // set the name of the action bar
         if (loadData().equals("En")) {
@@ -96,6 +95,10 @@ public class PlacesList extends AppCompatActivity {
             else if (typeActionBar == -2) {
                 getSupportActionBar().setTitle("University buildings");
             }
+
+            Spannable text = new SpannableString(getSupportActionBar().getTitle());
+            text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            getSupportActionBar().setTitle(text);
 
         }
         else {

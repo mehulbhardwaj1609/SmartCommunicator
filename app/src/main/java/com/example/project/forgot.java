@@ -35,7 +35,6 @@ public class forgot extends AppCompatActivity {
             Button button1=findViewById(R.id.forgot);
             button1.setText("Reset Password");
             button1.setAllCaps(false);
-
         }
     }
     public void reset(View view){
