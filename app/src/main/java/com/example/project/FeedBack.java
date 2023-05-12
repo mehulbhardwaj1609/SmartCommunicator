@@ -88,7 +88,7 @@ public class FeedBack extends AppCompatActivity {
          */
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"accessibility@ksu.edu.sa"});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"agarwal.muskan22@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, title.getText().toString());
         intent.putExtra(Intent.EXTRA_TEXT,description.getText().toString()+"\n"+name.getText().toString());
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -96,13 +96,13 @@ public class FeedBack extends AppCompatActivity {
         }
     }
     public void callUs(View view){
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "0114696414"));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "9519105622"));
         startActivity(intent);
         onBackPressed();
     }
     public String loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        String currentLanguage = sharedPreferences.getString(LANGUAGE, "Ar");
+        String currentLanguage = sharedPreferences.getString(LANGUAGE, "En");
         return currentLanguage;
     }
 }

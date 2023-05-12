@@ -255,7 +255,7 @@ public class SearchPlaces extends AppCompatActivity implements OnMapReadyCallbac
 
                 // Use the builder to create a FindAutocompletePredictionsRequest.
                 FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
-                        .setCountries("SA")
+                        .setCountries("IND")
                         .setSessionToken(token)
                         .setQuery(s.toString())
                         .build();
@@ -602,7 +602,7 @@ public class SearchPlaces extends AppCompatActivity implements OnMapReadyCallbac
 
                 // Use the builder to create a FindAutocompletePredictionsRequest.
                 FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
-                        .setCountries("SA")
+                        .setCountries("IND")
                         .setSessionToken(token)
                         .setQuery(data.get(0))
                         .build();

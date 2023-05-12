@@ -57,7 +57,7 @@ public class NoLogin extends AppCompatActivity {
             button6.setAllCaps(false);
             button2.setText("  Maps");
             button3.setText("  Dialog");
-            button4.setText("  Emergency call");
+            button4.setText("  Braille Assistant");
             button6.setText("  Contact Us");
 
 
@@ -82,7 +82,7 @@ public class NoLogin extends AppCompatActivity {
     public void assistanceVideoCall(View view) {
         getlocation();
         Intent duo = new Intent("com.google.android.apps.tachyon.action.CALL");
-        duo.setData(Uri.parse("tel: " + "0114696414"));
+        duo.setData(Uri.parse("tel: " + "9519105622"));
         duo.setPackage("com.google.android.apps.tachyon");
         startActivity(Intent.createChooser(duo, "Duo is not installed."));
     }

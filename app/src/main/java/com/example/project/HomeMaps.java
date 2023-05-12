@@ -1011,7 +1011,9 @@ public class HomeMaps extends AppCompatActivity {
                     break;
 
                 try {
-                    Thread.sleep(delayAfterName);
+                    if(delayAfterName>0) {
+                        Thread.sleep(delayAfterName);
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -1070,7 +1072,9 @@ public class HomeMaps extends AppCompatActivity {
                     break;
 
                 try {
-                    Thread.sleep(delayAfterName);
+                    if(delayAfterName>0) {
+                        Thread.sleep(delayAfterName);
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

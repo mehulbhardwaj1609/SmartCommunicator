@@ -95,13 +95,14 @@
                 android:layout_marginVertical="1dp"
                 android:background="@color/quantum_pink"
                 android:drawableRight="@drawable/sign"
-                android:onClick="signlang"
                 android:text="  Sign Language Assistant"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
+            <!--android:onClick="signlang"-->
 
             <Button
                 android:id="@+id/b4"
@@ -110,11 +111,11 @@
                 android:layout_marginVertical="1dp"
                 android:background="#9c4ad3"
                 android:drawableLeft="@drawable/video_call"
-                android:text=" Emergency Video Call"
+                android:text=" Braille Assistant"
                 android:textAlignment="textStart"
-                android:onClick="assistanceVideoCall"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
+            <!--android:onClick="assistanceVideoCall"-->
 
 
             <Button

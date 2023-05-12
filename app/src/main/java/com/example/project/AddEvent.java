@@ -9,6 +9,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -96,8 +97,12 @@ public class AddEvent extends AppCompatActivity {
                     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     Intent intent = new Intent(getApplication(), AlertReceiver.class);
                     intent.putExtra("name", event.getName());
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplication(), eventID, intent, 0);
-                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, event.getTime().getTime(), pendingIntent);
+                    PendingIntent pendingIntent = null;
+                    if(Build.VERSION.SDK_INT<31) {
+                        pendingIntent = PendingIntent.getBroadcast(getApplication(), eventID, intent, 0);
+                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, event.getTime().getTime(), pendingIntent);
+                    }
+
                 }
                 if(loadData().equals("En")) {
                     Toast.makeText(AddEvent.this,"Reminder has been added", Toast.LENGTH_SHORT).show();

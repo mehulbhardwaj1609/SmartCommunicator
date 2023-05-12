@@ -101,6 +101,7 @@
             app:layout_gravity="fill"
             android:textSize="10sp"
             app:layout_rowWeight="1"
+            android:visibility="gone"
             android:textAllCaps="false"/>
 
         <Button
@@ -114,6 +115,7 @@
             android:textAllCaps="false"
             android:textStyle="bold"
             app:layout_columnWeight="1"
+            android:visibility="gone"
             app:layout_gravity="fill"
             app:layout_rowWeight="1" />
     </androidx.gridlayout.widget.GridLayout>

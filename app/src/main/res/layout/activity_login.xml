@@ -87,8 +87,7 @@
         android:background="#1284b8"
         android:textColor="@color/white"
         android:onClick="noLogin"
+        android:visibility="gone"
         android:text=" Continue Without SignUp " />
-
-
 
 </LinearLayout>

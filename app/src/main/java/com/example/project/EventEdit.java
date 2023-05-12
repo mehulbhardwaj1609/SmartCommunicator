@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.MotionEvent;
@@ -145,7 +146,9 @@ public class EventEdit extends AppCompatActivity {
     }
 
     public void delete(View view){
-        cancelAlarm(event.getEventID());
+        if(Build.VERSION.SDK_INT<31) {
+            cancelAlarm(event.getEventID());
+        }
         eventRef=db.document(getIntent().getStringExtra("path"));
         eventRef.delete();
         if(loadData().equals("En")) {
