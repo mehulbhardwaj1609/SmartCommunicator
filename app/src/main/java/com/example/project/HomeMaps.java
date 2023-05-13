@@ -89,6 +89,8 @@ public class HomeMaps extends AppCompatActivity {
     TextView myLocationTextView;
     public static final String SHARED_PREFS = "sharedPrefs";
 
+    public long delay=1500;
+
 
 
     @Override
@@ -1089,7 +1091,13 @@ public class HomeMaps extends AppCompatActivity {
                     break;
 
 
-                mTTS.speak(fullDistanceDirection, TextToSpeech.QUEUE_FLUSH, null); // in english
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTTS.speak(fullDistanceDirection, TextToSpeech.QUEUE_FLUSH, null); // in english
+                    }
+                }, delay);
 
 
                 if(isExplorerEnabled== false){

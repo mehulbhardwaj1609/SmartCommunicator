@@ -73,7 +73,7 @@ public class Homepage extends AppCompatActivity {
             button1.setText("  Personal Profile");
             button2.setText("  Maps");
             button3.setText("  Dialog");
-            button4.setText("  Emergency call");
+            button4.setText("  Braille Assistant");
             button5.setText("  Calendar");
             button6.setText("  Contact Us");
             button1.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.personal_profile, 0);

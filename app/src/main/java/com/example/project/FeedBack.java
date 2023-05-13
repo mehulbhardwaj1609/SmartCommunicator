@@ -45,7 +45,7 @@ public class FeedBack extends AppCompatActivity {
             textView1.setText(" Title");
             textView2.setText(" Description");
             textView3.setText("Or");
-            textView4.setText("Wosool\nFeedback");
+            textView4.setText("Feedback");
             Button button1=findViewById(R.id.send);
             Button button2=findViewById(R.id.callUs);
             button1.setAllCaps(false);
